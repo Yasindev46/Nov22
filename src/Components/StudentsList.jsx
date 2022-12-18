@@ -6,19 +6,21 @@ import { Grid,Card,Button } from "@mui/material"
 export const StudentsList=()=>{
     const [data,setdata]=useState([])
     const dispatch=useDispatch()
+
     const result=useSelector((state)=>state.studentsReducer.studentsData)
     // console.log(result)
     useEffect(()=>{
         setdata(result)
     },[])
+    
     useEffect(()=>{
         setdata(result)
     },[result])
-   
-    const handleDelete=(ind)=>{
-        dispatch({type:"DELETE_DATA",data:ind})
-    }
 
+    const handleDelete=(ind)=>{
+        dispatch({type:"Delete_Item",payLoad:ind})  //dispatching an action
+    }
+  
     return(
         <React.Fragment>
             <h1 style={{textAlign:"center",backgroundColor:"blueviolet",color:"white",boxShadow:"2px 2px 2px black"}}>Students Data</h1>
@@ -30,8 +32,7 @@ export const StudentsList=()=>{
                     <h2>Name:-{item.name}</h2>
                     <h2>Age:- {item.age}</h2>
                     <h2>City:- {item.city}</h2>
-                    <Button variant="contained"  style={{marginLeft:"55px"}} onClick={()=>handleDelete(ind)}>Delete</Button>
-                    <Button variant="contained" style={{marginLeft:"25px"}}>Edit</Button>
+                   <Button variant="contained" onClick={()=>handleDelete(ind)} style={{position:"relative",left:"10px"}}>Delete</Button>
                     </Card>
                 </Grid>
             )

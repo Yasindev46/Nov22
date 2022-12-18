@@ -11,6 +11,7 @@ import Classtodo from './Components/Classtodo';
 import { StudentsList } from './Components/StudentsList';
 import { StaffList } from './Components/StaffList';
 import { AddStudent } from './Components/AddStudent';
+import { EditStudent } from './Components/EditStudent';
 
 
 function App() {
@@ -29,6 +30,7 @@ function App() {
           <Route path='/classtodo' element={<Classtodo/>}/>
           <Route path='/students' element={<StudentsList/>}/>
           <Route path='/staff' element={<StaffList/>}/>
+          <Route path='/editstudent' element={<EditStudent/>}/>
           <Route path='/addstudent' element={<AddStudent/>}/>
         </Routes>
       </BrowserRouter>

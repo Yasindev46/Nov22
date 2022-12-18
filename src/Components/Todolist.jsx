@@ -34,30 +34,31 @@ setText(item)
                 <Grid item xs={4}></Grid>
 
                 <Grid item xs={3}></Grid>
-                <Grid item xs={3}><TextField variant="outlined" value={text} fullWidth onChange={(e)=>setText(e.target.value)} /> </Grid>
-                <Grid item xs={3}><Button variant="contained" onClick={handleAdd}>Add</Button></Grid>
+                <Grid item xs={3}><TextField variant="outlined" value={text} fullWidth  onChange={(e)=>setText(e.target.value)} /> </Grid>
+                <Grid item xs={3}><Button variant="contained"  color="success" onClick={handleAdd} style={{margin:"10px"}}>Add</Button></Grid>
                 <Grid item xs={3}></Grid>
 
         </Grid>
             {list.map((item,ind)=>{
                 return(
                     // <Grid >
-                        <Card style={{marginLeft:"25%",width:"40%", textAlign:"center",marginTop:"5px"}}>
-                        <CardContent>
+                        <Card style={{marginLeft:"25%",width:"30%", textAlign:"center",marginTop:"5px"}}>
+                        <CardContent style={{height:"20px"}}>
                         <Grid container spacing={1}>
-                        <Grid item xs={6}>
-                            <h2>{ind+1} {item}</h2>
+                        <Grid item xs={4}>
+                            <h2 style={{position:"relative",bottom:"20px",textAlign:"left"}}>{ind+1}. {item}</h2>
                         </Grid>
+                        <Grid item xs={2}></Grid>
                         <Grid item xs={6}>
                             <Grid container spacing={2}> 
                             <Grid item xs={4}>
-                            <Button variant="contained" onClick={()=>handleDelete(ind)}>Delete</Button>
+                            <Button variant="contained" color="warning" onClick={()=>handleUpdate(item)}>Edit</Button>
+                            </Grid>
+                            <Grid item xs={2}>
+                            {/* <Button variant="contained" onClick={()=>handleDelete2(item)}>Delete2</Button> */}
                             </Grid>
                             <Grid item xs={4}>
-                            <Button variant="contained" onClick={()=>handleDelete2(item)}>Delete2</Button>
-                            </Grid>
-                            <Grid item xs={4}>
-                            <Button variant="contained" onClick={()=>handleUpdate(item)}>Edit</Button>
+                            <Button variant="contained" color="error" onClick={()=>handleDelete(ind)}>Delete</Button>
                             </Grid>
                             </Grid>
                         </Grid>
