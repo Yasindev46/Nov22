@@ -44,16 +44,18 @@ export const Turnary = () => {
         </Grid>
       </Grid>
 
-      <Grid container spacing={1}>
+      <Grid container spacing={1} mt={5}>
+        <Grid item xs={12}>
+        <h1>Diffrence between Toggle and button</h1>
+        </Grid>
         <Grid item xs={2}><Button variant="contained" onClick={()=>setIsLogin(!isLogin)}>toggle</Button></Grid>
         <Grid item xs={2}><Button variant="contained" onClick={()=>setIsLogin(true)}>button</Button></Grid>
-        <Grid item xs={2}><Card><h1 style={{ display: isLogin?"block":"none"}}>user</h1></Card></Grid>
-        <Grid item xs={2}><Card><Button variant="contained">{isLogin?"Logout":"Login"}</Button></Card></Grid>
-
-      </Grid>
-      {/* {isLogin?<img src=""/>:<img src=""/>} */}
+        <Grid item xs={2}><Button variant="contained">{isLogin?"Logout":"Login"}</Button></Grid>
+        <Grid item xs={2}>
       {isLogin?<Button variant="contained" color="primary">Logout</Button >
               :<Button  variant="contained" color="success">Login</Button>}
+      </Grid>
+      </Grid>
     </div>
   );
 };

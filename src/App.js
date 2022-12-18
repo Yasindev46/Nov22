@@ -8,9 +8,15 @@ import { Api } from './Components/Api';
 import { Turnary } from './Components/Turnary';
 import Classcomponent from './Components/Classcomponent';
 import Classtodo from './Components/Classtodo';
+import { StudentsList } from './Components/StudentsList';
+import { StaffList } from './Components/StaffList';
+import { AddStudent } from './Components/AddStudent';
+
+
 function App() {
   return (
     <div className="App">
+      {/* <StudentsList/> */}
       <BrowserRouter>
        <Navbar/>
         <Routes>
@@ -21,6 +27,9 @@ function App() {
           <Route path='/turnary' element={<Turnary/>}/>
           <Route path='/class' element={<Classcomponent/>}/>
           <Route path='/classtodo' element={<Classtodo/>}/>
+          <Route path='/students' element={<StudentsList/>}/>
+          <Route path='/staff' element={<StaffList/>}/>
+          <Route path='/addstudent' element={<AddStudent/>}/>
         </Routes>
       </BrowserRouter>
     </div>

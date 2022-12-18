@@ -1,7 +1,7 @@
 import React from "react"
 import axios from "axios"
 import { useState,useEffect } from "react"
-import { Card,Grid } from "@mui/material"
+import { Card,Grid, TextField } from "@mui/material"
 
 export const Api=()=>{
     const [apiData,setApiData]=useState([])
@@ -15,6 +15,7 @@ export const Api=()=>{
         setApiDatacopy(result.data)
     }
 
+
     useEffect(()=>{
         getData()
     },[])
@@ -25,7 +26,7 @@ export const Api=()=>{
     },[text])
     return(
         <div>
-            <input type="text" onChange={(e)=>setText(e.target.value)} />
+            <TextField variant="outlined" type="text" placeholder="Search Here" onChange={(e)=>setText(e.target.value)}  style={{marginLeft:"30%",width:"400px"}}/>
          <Grid container spacing={2}>
            {apiData.map((item)=>{
             return(
