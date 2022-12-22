@@ -19,6 +19,11 @@ const initialState={
 }
 
 export const staffReducer=(state=initialState,action)=>{
+    if(action.type==="Add_item"){
+        return{
+        ...state,staffData:[...state.staffData,action.payLoad]
+        }
+    }
     if(action.type==="Delete_item"){
         console.log("==",action.payLoad)
         const result=state.staffData.filter((item,i)=>i!=action.payLoad)

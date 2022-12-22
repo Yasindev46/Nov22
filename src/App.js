@@ -12,6 +12,8 @@ import { StudentsList } from './Components/StudentsList';
 import { StaffList } from './Components/StaffList';
 import { AddStudent } from './Components/AddStudent';
 import { EditStudent } from './Components/EditStudent';
+import { AddStaff } from './Components/AddStaff';
+import { Landing } from './Assignment/Landing';
 
 
 function App() {
@@ -32,8 +34,10 @@ function App() {
           <Route path='/staff' element={<StaffList/>}/>
           <Route path='/editstudent' element={<EditStudent/>}/>
           <Route path='/addstudent' element={<AddStudent/>}/>
+          <Route path='/addstaff' element={<AddStaff/>}/>
         </Routes>
       </BrowserRouter>
+      {/* <Landing/> */}
     </div>
   );
 }

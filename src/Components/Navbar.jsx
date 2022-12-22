@@ -56,6 +56,11 @@ export const Navbar=()=>{
                         <Link to="/addstudent"><h2>Add Student</h2></Link>
                     </Card>
                 </Grid>
+                <Grid item xs={2}>
+                    <Card sx={{bgcolor:"yellow",color:"white",textAlign:"center"}}>
+                        <Link to="/addstaff"><h2>Add Staff</h2></Link>
+                    </Card>
+                </Grid>
             </Grid>
         </div>
     )

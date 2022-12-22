@@ -4,7 +4,8 @@ const initialState={
         {name:"Sam", age:23,city:"Pune"},
         {name:"Sam", age:23,city:"Pune"},
         {name:"Seema", age:20,city:"Mumbai"},
-    ]
+    ],
+
 }
 
 export const studentsReducer=(state=initialState,action)=>{
@@ -18,7 +19,7 @@ export const studentsReducer=(state=initialState,action)=>{
         console.log("action",action.payLoad)
         console.log("action",action.type)
         const result=state.studentsData.filter((elem,i)=>i!=action.payLoad)
-console.log("result",result)
+        console.log("result",result)
             return {...state,studentsData: result };
         } 
      return state;
